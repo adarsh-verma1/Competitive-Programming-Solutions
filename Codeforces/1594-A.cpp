@@ -56,10 +56,10 @@ using namespace std;
 // }
 
 void solve() {
-	int a, b, c;
-	cin >> a >> b >> c;
+	ll n;
+	cin >> n;
 
-	cout << ((a + b + c) % 3 >= 1) << endl;
+	cout << -n + 1 << " " << n << endl;
 }
 
 int main()

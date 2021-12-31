@@ -1,11 +1,5 @@
-5
-abcdefghijklmnopqrstuvwxyz
-hello
-abcdefghijklmnopqrstuvwxyz
-i
-abcdefghijklmnopqrstuvwxyz
-codeforces
-qwertyuiopasdfghjklzxcvbnm
-qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-qwertyuiopasdfghjklzxcvbnm
-abacaba
+4
+3 7 9 5
+4 5 6 9
+5 3 8 1
+6 5 3 2

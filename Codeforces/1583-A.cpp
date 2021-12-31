@@ -25,6 +25,20 @@ using namespace std;
 #define tc int T; cin >> T; while(T--)
 #define fast ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
+// ll gcd(ll a, ll b)
+// {
+//     if (b == 0)
+//         return a;
+//     return gcd(b, a % b);
+// }
+
+// bool ispowerof2(ll n)
+// {
+//    if(n==0)
+//     return false;
+//    return (ceil(log2(n)) == floor(log2(n)));
+// }
+
 // int power(int value1, int power1) {
 // 	if (power1 == 0)
 // 		return 1;
@@ -55,11 +69,58 @@ using namespace std;
 // 	return (n * one);
 // }
 
-void solve() {
-	int a, b, c;
-	cin >> a >> b >> c;
+// bool isPrime(int n) {
+// 	vector<bool> sieve(n + 1, true);
 
-	cout << ((a + b + c) % 3 >= 1) << endl;
+// 	for (int i = 2; i * i <= n; i++) {
+// 		if (sieve[i] == true) {
+// 			for (int j = i * i; j <= n; j += i) {
+// 				sieve[j] = false;
+// 			}
+// 		}
+// 	}
+// 	return sieve[n];
+// }
+
+bool isPrime(int n) {
+	if (n <= 1)
+		return false;
+
+	for (int i = 2; i < n; i++)
+		if (n % i == 0)
+			return false;
+
+	return true;
+}
+
+void solve() {
+	int n;
+	cin >> n;
+	ll sum = 0;
+	vi a(n);
+	FOR(n) {
+		cin >> a[i];
+		sum += a[i];
+	}
+
+	if (isPrime(sum)) {
+		cout << n - 1 << endl;
+		bool flag = true;
+		FOR(n) {
+			if (a[i] % 2 != 0 && flag) {
+				flag = false;
+			}
+			else
+				cout << i + 1 << " ";
+		}
+	}
+	else {
+		cout << n << endl;
+		FOR(n)
+		cout << i + 1 << " ";
+	}
+
+	cout << endl;
 }
 
 int main()

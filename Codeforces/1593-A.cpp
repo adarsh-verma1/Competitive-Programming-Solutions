@@ -59,7 +59,30 @@ void solve() {
 	int a, b, c;
 	cin >> a >> b >> c;
 
-	cout << ((a + b + c) % 3 >= 1) << endl;
+	int val = max(a, max(b, c));
+	int cnt = 0;
+	if (a == val)
+		cnt++;
+	if (b == val)
+		cnt++;
+	if (c == val)
+		cnt++;
+
+	if (a == val && cnt == 1)
+		cout << 0 << " ";
+	else
+		cout << val - a + 1 << " ";
+
+	if (b == val && cnt == 1)
+		cout << 0 << " ";
+	else
+		cout << val - b + 1 << " ";
+
+	if (c == val && cnt == 1)
+		cout << 0 << " ";
+	else
+		cout << val - c + 1 << " ";
+	cout << endl;
 }
 
 int main()

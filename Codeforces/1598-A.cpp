@@ -56,10 +56,26 @@ using namespace std;
 // }
 
 void solve() {
-	int a, b, c;
-	cin >> a >> b >> c;
+	int n;
+	cin >> n;
+	string s1, s2;
+	cin >> s1;
+	cin >> s2;
 
-	cout << ((a + b + c) % 3 >= 1) << endl;
+	bool flag = true;
+	FOR(n - 1) {
+		if (s1[i + 1] == '0' || s2[i + 1] == '0')
+			continue;
+		else {
+			flag = false;
+			break;
+		}
+	}
+	if (flag)
+		cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
+
 }
 
 int main()

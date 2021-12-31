@@ -56,10 +56,37 @@ using namespace std;
 // }
 
 void solve() {
-	int a, b, c;
-	cin >> a >> b >> c;
+	string s;
+	cin >> s;
 
-	cout << ((a + b + c) % 3 >= 1) << endl;
+	int n = s.length();
+	char x;
+	vi freq(26, 0);
+	for (char c : s)
+		freq[c - 'a']++;
+
+	FOR(26) {
+		if (freq[i] != 0) {
+			x = char(i + 'a');
+			cout << x << " ";
+			break;
+		}
+	}
+
+	string ans = "";
+	int j;
+	for (j = 0 ; j < n; j++) {
+		if (s[j] == x)
+			break;
+		else
+			ans += s[j];
+	}
+
+	j++;
+	for (j; j < n; j++) {
+		ans += s[j];
+	}
+	cout << ans << endl;
 }
 
 int main()
